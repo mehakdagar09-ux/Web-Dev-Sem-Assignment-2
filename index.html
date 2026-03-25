@@ -3,40 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Async Weather Tracker</title>
+    <title>Weather Tracker - Beautiful Async Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <div class="background-animation"></div>
+    
     <div class="container">
-
-        <h1>🌤 Async Weather Tracker</h1>
-
-        <div class="parent-card">
-            <div class="card">
-                <h3>Search City</h3>
-                <div class="input-group">
-                    <input id="cityInput" placeholder="Delhi, London">
-                    <button id="searchBtn">Search</button>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🌤</span>
+                    <h1>Weather Tracker</h1>
                 </div>
-                <br>
-                <br>
-                <h3>Search History</h3>
-                <div class="history" id="history"></div>
+                <p class="subtitle">Real-time weather forecast with async data fetching</p>
             </div>
+        </header>
 
-            <div class="card">
-                <h3>Weather Info</h3>
-                <div id="weather"></div>
-            </div>
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <!-- Left Panel: Search & History -->
+            <aside class="search-panel">
+                <div class="card search-card">
+                    <h2 class="card-title">Find Weather</h2>
+                    
+                    <div class="input-wrapper">
+                        <div class="input-group">
+                            <input 
+                                id="cityInput" 
+                                type="text"
+                                placeholder="Search for a city..." 
+                                autocomplete="off"
+                                spellcheck="false"
+                            >
+                            <button id="searchBtn" class="btn-search">
+                                <span class="search-icon">🔍</span>
+                                <span class="btn-text">Search</span>
+                            </button>
+                        </div>
+                        <p class="input-hint">Try: London, New York, Tokyo...</p>
+                    </div>
+                </div>
+
+                <!-- Search History Card -->
+                <div class="card history-card">
+                    <h2 class="card-title">Recent Searches</h2>
+                    <div class="history-container">
+                        <div class="history" id="history">
+                            <p class="history-placeholder">No search history yet</p>
+                        </div>
+                    </div>
+                    <button id="clearHistoryBtn" class="btn-clear">Clear History</button>
+                </div>
+            </aside>
+
+            <!-- Right Panel: Weather Display -->
+            <main class="weather-panel">
+                <div class="card weather-card">
+                    <h2 class="card-title">Current Weather</h2>
+                    <div id="weather" class="weather-container">
+                        <div class="empty-state">
+                            <p class="empty-icon">🌍</p>
+                            <p>Search for a city to see weather information</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-
-        <!-- <div class="card">
-            <h3>Console – Event Loop</h3>
-            <div class="console" id="console"></div>
-        </div> -->
-
     </div>
 
     <script src="./script.js"></script>
